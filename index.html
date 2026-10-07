@@ -127,4 +127,551 @@
 
         .brain-box svg {
             width: 300px;
-            height: 300px
+            height: 300px;
+        }
+
+        /* SECTION */
+        section {
+            padding: 70px 8%;
+        }
+
+        .judul {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .judul h2 {
+            color: #151b4f;
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .judul p {
+            color: #666;
+        }
+
+        /* TENTANG OTAK */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: #263c91;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #555;
+            text-align: justify;
+        }
+
+        .info-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .info-box h3 {
+            color: #151b4f;
+            margin-bottom: 15px;
+        }
+
+        .info-box ul {
+            list-style: none;
+        }
+
+        .info-box li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-box li:last-child {
+            border-bottom: none;
+        }
+
+        /* MANFAAT */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            transition: 0.3s;
+            border-top: 5px solid #3978c9;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #151b4f;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* TIPS */
+        .tips-section {
+            background: #151b4f;
+            color: white;
+        }
+
+        .tips-section .judul h2 {
+            color: white;
+        }
+
+        .tips-section .judul p {
+            color: #cbd3f4;
+        }
+
+        .tips {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .tip {
+            background: rgba(255,255,255,0.08);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.12);
+            transition: 0.3s;
+        }
+
+        .tip:hover {
+            background: rgba(255,255,255,0.14);
+            transform: translateY(-5px);
+        }
+
+        .tip h3 {
+            color: #63d8ff;
+            margin-bottom: 8px;
+        }
+
+        .tip p {
+            color: #e2e6f7;
+        }
+
+        /* KEBIASAAN */
+        .habit {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .habit-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .habit-item:last-child {
+            border-bottom: none;
+        }
+
+        .check {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #e2f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #168db5;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0d1237;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer h3 {
+            color: #63d8ff;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #bfc6e5;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 850px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 13px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 60px 6%;
+            }
+
+            .hero-text h1 {
+                font-size: 42px;
+            }
+
+            .brain-box {
+                width: 300px;
+                height: 300px;
+            }
+
+            .brain-box svg {
+                width: 230px;
+                height: 230px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .tips {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero-text h1 {
+                font-size: 36px;
+            }
+
+            .hero-text p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">Brain<span>Care</span></div>
+
+        <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#manfaat">Manfaat</a></li>
+            <li><a href="#tips">Tips</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="beranda">
+
+        <div class="hero-text">
+            <small>ARTIKEL KESEHATAN</small>
+
+            <h1>
+                Jaga Otak,<br>
+                Jaga Masa Depan
+            </h1>
+
+            <p>
+                Otak merupakan salah satu organ terpenting dalam tubuh.
+                Menjaga kesehatan otak membantu kita belajar, berpikir,
+                mengingat, dan melakukan berbagai aktivitas sehari-hari.
+            </p>
+
+            <a href="#tentang" class="btn">Pelajari Lebih Lanjut →</a>
+        </div>
+
+
+        <!-- ILUSTRASI OTAK -->
+        <div class="brain-box">
+
+            <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+
+                <defs>
+                    <linearGradient id="brainColor" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#8eeaff"/>
+                        <stop offset="100%" stop-color="#ffffff"/>
+                    </linearGradient>
+                </defs>
+
+                <circle cx="150" cy="150" r="130"
+                        fill="none"
+                        stroke="#63d8ff"
+                        stroke-width="2"
+                        opacity="0.3"/>
+
+                <path
+                    d="M150 75
+                    C120 45 75 65 80 100
+                    C50 105 50 145 75 155
+                    C55 180 75 215 105 210
+                    C115 240 145 235 150 215
+                    C155 235 185 240 195 210
+                    C225 215 245 180 225 155
+                    C250 145 250 105 220 100
+                    C225 65 180 45 150 75Z"
+                    fill="url(#brainColor)"
+                    stroke="#63d8ff"
+                    stroke-width="5"/>
+
+                <path d="M150 78 C135 100 140 125 150 145
+                         C160 165 160 190 150 215"
+                      fill="none"
+                      stroke="#3978c9"
+                      stroke-width="5"/>
+
+                <path d="M110 85 C90 105 105 120 90 135
+                         M105 145 C85 155 95 175 110 180
+                         M120 190 C105 205 125 215 135 205"
+                      fill="none"
+                      stroke="#3978c9"
+                      stroke-width="5"
+                      stroke-linecap="round"/>
+
+                <path d="M190 85 C210 105 195 120 210 135
+                         M195 145 C215 155 205 175 190 180
+                         M180 190 C195 205 175 215 165 205"
+                      fill="none"
+                      stroke="#3978c9"
+                      stroke-width="5"
+                      stroke-linecap="round"/>
+
+            </svg>
+
+        </div>
+    </section>
+
+
+    <!-- TENTANG OTAK -->
+    <section id="tentang">
+
+        <div class="judul">
+            <h2>🧠 Mengenal Kesehatan Otak</h2>
+            <p>Kenali pentingnya menjaga kesehatan otak sejak dini.</p>
+        </div>
+
+        <div class="about">
+
+            <div class="about-text">
+                <h3>Apa itu otak?</h3>
+
+                <p>
+                    Otak adalah organ utama dalam sistem saraf manusia.
+                    Otak berperan dalam mengatur berbagai aktivitas tubuh,
+                    seperti berpikir, belajar, mengingat, bergerak,
+                    mengatur emosi, dan mengambil keputusan.
+                </p>
+
+                <br>
+
+                <p>
+                    Karena memiliki banyak fungsi penting, kesehatan otak
+                    perlu dijaga dengan menerapkan pola hidup yang sehat
+                    dan seimbang.
+                </p>
+            </div>
+
+            <div class="info-box">
+                <h3>Fungsi Penting Otak</h3>
+
+                <ul>
+                    <li>🧠 Mengatur pikiran dan proses belajar</li>
+                    <li>💭 Membantu menyimpan dan mengingat informasi</li>
+                    <li>❤️ Mengatur emosi dan perilaku</li>
+                    <li>🏃 Mengatur gerakan tubuh</li>
+                    <li>👀 Memproses berbagai informasi dari tubuh</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- MANFAAT -->
+    <section id="manfaat">
+
+        <div class="judul">
+            <h2>✨ Mengapa Otak Harus Dijaga?</h2>
+            <p>Otak yang sehat mendukung aktivitas sehari-hari.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">📚</div>
+                <h3>Mendukung Belajar</h3>
+                <p>
+                    Kesehatan otak membantu kita berkonsentrasi,
+                    memahami pelajaran, dan mengingat informasi.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">💡</div>
+                <h3>Meningkatkan Fokus</h3>
+                <p>
+                    Kebiasaan hidup sehat dapat membantu menjaga
+                    kemampuan fokus saat melakukan aktivitas.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">😊</div>
+                <h3>Mengatur Emosi</h3>
+                <p>
+                    Otak berperan dalam mengatur emosi sehingga
+                    kesehatannya penting untuk kehidupan sehari-hari.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- TIPS -->
+    <section class="tips-section" id="tips">
+
+        <div class="judul">
+            <h2>🌟 Tips Menjaga Kesehatan Otak</h2>
+            <p>Kebiasaan sederhana yang bisa dilakukan setiap hari.</p>
+        </div>
+
+        <div class="tips">
+
+            <div class="tip">
+                <h3>😴 1. Tidur yang Cukup</h3>
+                <p>
+                    Tidur yang cukup membantu tubuh dan otak beristirahat
+                    setelah melakukan berbagai aktivitas.
+                </p>
+            </div>
+
+            <div class="tip">
+                <h3>🥗 2. Makan Bergizi</h3>
+                <p>
+                    Konsumsi makanan bergizi dan seimbang untuk membantu
+                    memenuhi kebutuhan nutrisi tubuh.
+                </p>
+            </div>
+
+            <div class="tip">
+                <h3>🏃 3. Aktif Bergerak</h3>
+                <p>
+                    Melakukan aktivitas fisik secara rutin membantu
+                    menjaga kebugaran tubuh dan mendukung kesehatan otak.
+                </p>
+            </div>
+
+            <div class="tip">
+                <h3>📖 4. Latih Otak</h3>
+                <p>
+                    Membaca, belajar hal baru, bermain puzzle, atau
+                    mengasah keterampilan dapat menjadi aktivitas yang
+                    merangsang otak.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- KEBIASAAN -->
+    <section>
+
+        <div class="judul">
+            <h2>✅ Kebiasaan Baik untuk Otak</h2>
+            <p>Mulai dari kebiasaan kecil setiap hari.</p>
+        </div>
+
+        <div class="habit">
+
+            <div class="habit-item">
+                <div class="check">✓</div>
+                <p>Tidur dan bangun dengan jadwal yang teratur.</p>
+            </div>
+
+            <div class="habit-item">
+                <div class="check">✓</div>
+                <p>Mengonsumsi makanan yang beragam dan bergizi.</p>
+            </div>
+
+            <div class="habit-item">
+                <div class="check">✓</div>
+                <p>Melakukan aktivitas fisik secara rutin.</p>
+            </div>
+
+            <div class="habit-item">
+                <div class="check">✓</div>
+                <p>Belajar dan mencoba hal-hal baru.</p>
+            </div>
+
+            <div class="habit-item">
+                <div class="check">✓</div>
+                <p>Beristirahat ketika tubuh dan pikiran membutuhkan.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h3>🧠 BrainCare</h3>
+
+        <p>
+            Artikel Kesehatan Otak | Tugas RPL
+        </p>
+
+        <p>
+            © 2026 BrainCare. Tetap sehat dan semangat belajar!
+        </p>
+
+    </footer>
+
+</body>
+</html>
