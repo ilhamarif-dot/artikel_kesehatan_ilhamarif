@@ -11,314 +11,120 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, sans-serif;
-            background: #f4f0ff;
-            color: #333;
+            background: #f4f7ff;
+            color: #222;
             line-height: 1.7;
-        }
-
-        /* HEADER */
-        header {
-            background: linear-gradient(135deg, #6c3fc7, #a875e8);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        header h1 {
-            font-size: 40px;
-            margin-bottom: 8px;
-        }
-
-        header p {
-            font-size: 17px;
         }
 
         /* NAVBAR */
         nav {
-            background: #4b258e;
-            padding: 15px;
-            text-align: center;
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 100;
+            background: #151b4f;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
         }
 
-        nav a {
+        .logo {
             color: white;
-            text-decoration: none;
-            margin: 0 15px;
+            font-size: 22px;
             font-weight: bold;
         }
 
-        nav a:hover {
-            color: #e4d5ff;
+        .logo span {
+            color: #63d8ff;
         }
 
-        /* CONTAINER */
-        .container {
-            width: 90%;
-            max-width: 950px;
-            margin: 35px auto;
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
         }
 
-        /* CARD */
-        .card {
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #63d8ff;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 600px;
+            background: linear-gradient(135deg, #151b4f, #263c91, #3978c9);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 8%;
+            gap: 40px;
+            overflow: hidden;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text small {
+            color: #63d8ff;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .hero-text h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin: 15px 0;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #e4e9ff;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #63d8ff;
+            color: #10204d;
+            padding: 13px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
             background: white;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 20px;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.10);
-        }
-
-        .card h2 {
-            color: #5b2aa8;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            color: #7544c2;
-            margin-top: 22px;
-            margin-bottom: 7px;
-        }
-
-        .card p {
-            text-align: justify;
         }
 
         /* GAMBAR OTAK */
-        .brain-image {
-            background: #eee5ff;
-            border-radius: 18px;
-            padding: 20px;
-            margin: 25px 0;
-            text-align: center;
+        .brain-box {
+            width: 380px;
+            height: 380px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            box-shadow: 0 0 60px rgba(99,216,255,0.25);
         }
 
-        .brain-image svg {
-            width: 100%;
-            max-width: 650px;
-            height: auto;
-        }
-
-        /* TIPS */
-        .tips ul {
-            padding-left: 25px;
-        }
-
-        .tips li {
-            margin: 10px 0;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #4b258e;
-            color: white;
-            text-align: center;
-            padding: 25px;
-            margin-top: 40px;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 30px;
-            }
-
-            nav a {
-                margin: 0 7px;
-                font-size: 14px;
-            }
-
-            .card {
-                padding: 22px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- HEADER -->
-    <header>
-        <h1>KESEHATAN OTAK</h1>
-        <p>Kenali dan Jaga Otak untuk Kehidupan yang Lebih Baik</p>
-    </header>
-
-    <!-- NAVBAR -->
-    <nav>
-        <a href="#beranda">Beranda</a>
-        <a href="#artikel">Artikel</a>
-        <a href="#tips">Tips</a>
-    </nav>
-
-    <div class="container">
-
-        <!-- BERANDA -->
-        <section class="card" id="beranda">
-
-            <h2>Pentingnya Menjaga Kesehatan Otak</h2>
-
-            <p>
-                Otak merupakan salah satu organ yang sangat penting dalam tubuh.
-                Otak membantu mengatur berbagai fungsi tubuh, mengolah informasi,
-                mengingat sesuatu, serta membantu kita berpikir dan mengambil keputusan.
-            </p>
-
-            <!-- GAMBAR ILUSTRASI OTAK -->
-            <div class="brain-image">
-
-                <svg viewBox="0 0 800 450"
-                     xmlns="http://www.w3.org/2000/svg">
-
-                    <!-- Background -->
-                    <rect width="800" height="450"
-                          rx="25" fill="#eee5ff"/>
-
-                    <!-- Otak kiri -->
-                    <path d="
-                        M400 115
-                        C350 70 275 80 245 130
-                        C190 130 165 175 185 220
-                        C145 260 170 320 220 330
-                        C230 380 290 390 330 360
-                        C360 385 390 370 400 345
-                        Z"
-                        fill="#c89bf2"/>
-
-                    <!-- Otak kanan -->
-                    <path d="
-                        M400 115
-                        C450 70 525 80 555 130
-                        C610 130 635 175 615 220
-                        C655 260 630 320 580 330
-                        C570 380 510 390 470 360
-                        C440 385 410 370 400 345
-                        Z"
-                        fill="#b77ce8"/>
-
-                    <!-- Garis otak -->
-                    <path d="
-                        M300 125
-                        C270 160 300 180 270 210
-                        C240 240 285 255 265 290
-                        C250 315 285 335 310 320
-
-                        M350 105
-                        C325 140 360 160 335 190
-                        C310 220 350 240 325 275
-                        C305 305 345 325 360 310
-
-                        M500 125
-                        C530 160 500 180 530 210
-                        C560 240 515 255 535 290
-                        C550 315 515 335 490 320
-
-                        M450 105
-                        C475 140 440 160 465 190
-                        C490 220 450 240 475 275
-                        C495 305 455 325 440 310"
-                        fill="none"
-                        stroke="#8b52c7"
-                        stroke-width="10"
-                        stroke-linecap="round"/>
-
-                    <!-- Titik tengah -->
-                    <line x1="400" y1="115"
-                          x2="400" y2="345"
-                          stroke="#7544c2"
-                          stroke-width="5"/>
-
-                    <!-- Teks -->
-                    <text x="400" y="410"
-                          text-anchor="middle"
-                          font-size="30"
-                          font-family="Arial"
-                          font-weight="bold"
-                          fill="#4b258e">
-                        OTAK SEHAT
-                    </text>
-
-                </svg>
-
-            </div>
-        </section>
-
-
-        <!-- ARTIKEL -->
-        <section class="card" id="artikel">
-
-            <h2>Artikel: Cara Menjaga Kesehatan Otak</h2>
-
-            <p>
-                Menjaga kesehatan otak penting dilakukan sejak dini. Otak yang
-                sehat membantu seseorang berpikir, belajar, mengingat, dan
-                melakukan berbagai aktivitas sehari-hari dengan baik.
-            </p>
-
-            <h3>1. Tidur yang Cukup</h3>
-
-            <p>
-                Tidur memberikan kesempatan bagi tubuh dan otak untuk beristirahat.
-                Kebiasaan tidur yang teratur dapat membantu menjaga kemampuan
-                konsentrasi dan daya ingat.
-            </p>
-
-            <h3>2. Mengonsumsi Makanan Bergizi</h3>
-
-            <p>
-                Makanan bergizi membantu memenuhi kebutuhan nutrisi tubuh.
-                Konsumsilah makanan yang beragam seperti sayuran, buah-buahan,
-                protein, dan sumber makanan bergizi lainnya.
-            </p>
-
-            <h3>3. Rajin Berolahraga</h3>
-
-            <p>
-                Aktivitas fisik secara teratur dapat membantu menjaga kesehatan
-                tubuh secara keseluruhan. Berjalan kaki, bersepeda, dan olahraga
-                ringan dapat menjadi pilihan aktivitas sehari-hari.
-            </p>
-
-            <h3>4. Melatih Otak</h3>
-
-            <p>
-                Otak juga perlu digunakan dan dilatih. Membaca, belajar hal baru,
-                bermain permainan yang melatih logika, dan mengerjakan aktivitas
-                yang membutuhkan konsentrasi dapat membantu menjaga kemampuan
-                berpikir.
-            </p>
-
-        </section>
-
-
-        <!-- TIPS -->
-        <section class="card tips" id="tips">
-
-            <h2>Tips Sederhana Menjaga Otak</h2>
-
-            <ul>
-                <li>Tidur dan bangun secara teratur.</li>
-                <li>Mengonsumsi makanan bergizi.</li>
-                <li>Melakukan aktivitas fisik secara rutin.</li>
-                <li>Membaca dan mempelajari hal-hal baru.</li>
-                <li>Mengelola stres dengan kegiatan yang positif.</li>
-                <li>Memberikan waktu istirahat yang cukup.</li>
-            </ul>
-
-        </section>
-
-    </div>
-
-
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 Artikel Kesehatan Otak</p>
-        <p>Dibuat untuk tugas sekolah</p>
-    </footer>
-
-</body>
-</html>
+        .brain-box svg {
+            width: 300px;
+            height: 300px
