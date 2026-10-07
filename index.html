@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kesehatan Otak</title>
+    <title>BrainCare - Kesehatan Otak</title>
 
     <style>
         * {
@@ -71,7 +71,6 @@
             justify-content: space-between;
             padding: 70px 8%;
             gap: 40px;
-            overflow: hidden;
         }
 
         .hero-text {
@@ -112,7 +111,7 @@
             background: white;
         }
 
-        /* GAMBAR OTAK */
+        /* GAMBAR HERO */
         .brain-box {
             width: 400px;
             height: 400px;
@@ -129,7 +128,6 @@
             height: 100%;
             object-fit: cover;
             border-radius: 25px;
-            display: block;
         }
 
         /* SECTION */
@@ -152,12 +150,20 @@
             color: #666;
         }
 
-        /* TENTANG OTAK */
+        /* TENTANG */
         .about {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
         }
 
         .about-text h3 {
@@ -174,6 +180,7 @@
         .info-box {
             background: white;
             padding: 30px;
+            margin-top: 25px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
@@ -275,6 +282,49 @@
             color: #e2e6f7;
         }
 
+        /* GALERI */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 22px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            color: white;
+            background: linear-gradient(
+                transparent,
+                rgba(0,0,0,0.8)
+            );
+        }
+
+        .gallery-text h3 {
+            font-size: 20px;
+        }
+
         /* KEBIASAAN */
         .habit {
             max-width: 850px;
@@ -368,6 +418,10 @@
             .tips {
                 grid-template-columns: 1fr;
             }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         @media (max-width: 500px) {
@@ -389,6 +443,10 @@
                 width: 280px;
                 height: 280px;
             }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -404,6 +462,7 @@
             <li><a href="#tentang">Tentang</a></li>
             <li><a href="#manfaat">Manfaat</a></li>
             <li><a href="#tips">Tips</a></li>
+            <li><a href="#galeri">Galeri</a></li>
         </ul>
     </nav>
 
@@ -412,6 +471,7 @@
     <section class="hero" id="beranda">
 
         <div class="hero-text">
+
             <small>ARTIKEL KESEHATAN</small>
 
             <h1>
@@ -428,22 +488,21 @@
             <a href="#tentang" class="btn">
                 Pelajari Lebih Lanjut →
             </a>
+
         </div>
 
-
-        <!-- GAMBAR OTAK ASLI -->
         <div class="brain-box">
 
             <img
                 src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=900&q=80"
-                alt="Gambar otak manusia">
+                alt="Otak manusia">
 
         </div>
 
     </section>
 
 
-    <!-- TENTANG OTAK -->
+    <!-- TENTANG -->
     <section id="tentang">
 
         <div class="judul">
@@ -453,7 +512,16 @@
 
         <div class="about">
 
+            <div class="about-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80"
+                    alt="Ilustrasi kesehatan">
+
+            </div>
+
             <div class="about-text">
+
                 <h3>Apa itu otak?</h3>
 
                 <p>
@@ -470,21 +538,25 @@
                     perlu dijaga dengan menerapkan pola hidup yang sehat
                     dan seimbang.
                 </p>
-            </div>
 
-            <div class="info-box">
-                <h3>Fungsi Penting Otak</h3>
+                <div class="info-box">
 
-                <ul>
-                    <li>🧠 Mengatur pikiran dan proses belajar</li>
-                    <li>💭 Membantu menyimpan dan mengingat informasi</li>
-                    <li>❤️ Mengatur emosi dan perilaku</li>
-                    <li>🏃 Mengatur gerakan tubuh</li>
-                    <li>👀 Memproses berbagai informasi dari tubuh</li>
-                </ul>
+                    <h3>Fungsi Penting Otak</h3>
+
+                    <ul>
+                        <li>🧠 Mengatur pikiran dan proses belajar</li>
+                        <li>💭 Membantu menyimpan informasi</li>
+                        <li>❤️ Mengatur emosi dan perilaku</li>
+                        <li>🏃 Mengatur gerakan tubuh</li>
+                        <li>👀 Memproses informasi dari tubuh</li>
+                    </ul>
+
+                </div>
+
             </div>
 
         </div>
+
     </section>
 
 
@@ -492,33 +564,46 @@
     <section id="manfaat">
 
         <div class="judul">
+
             <h2>✨ Mengapa Otak Harus Dijaga?</h2>
-            <p>Otak yang sehat mendukung aktivitas sehari-hari.</p>
+
+            <p>
+                Otak yang sehat mendukung aktivitas sehari-hari.
+            </p>
+
         </div>
 
         <div class="cards">
 
             <div class="card">
                 <div class="icon">📚</div>
+
                 <h3>Mendukung Belajar</h3>
+
                 <p>
                     Kesehatan otak membantu kita berkonsentrasi,
                     memahami pelajaran, dan mengingat informasi.
                 </p>
             </div>
 
+
             <div class="card">
                 <div class="icon">💡</div>
+
                 <h3>Meningkatkan Fokus</h3>
+
                 <p>
                     Kebiasaan hidup sehat dapat membantu menjaga
                     kemampuan fokus saat melakukan aktivitas.
                 </p>
             </div>
 
+
             <div class="card">
                 <div class="icon">😊</div>
+
                 <h3>Mengatur Emosi</h3>
+
                 <p>
                     Otak berperan dalam mengatur emosi sehingga
                     kesehatannya penting untuk kehidupan sehari-hari.
@@ -526,6 +611,7 @@
             </div>
 
         </div>
+
     </section>
 
 
@@ -533,46 +619,170 @@
     <section class="tips-section" id="tips">
 
         <div class="judul">
+
             <h2>🌟 Tips Menjaga Kesehatan Otak</h2>
-            <p>Kebiasaan sederhana yang bisa dilakukan setiap hari.</p>
+
+            <p>
+                Kebiasaan sederhana yang bisa dilakukan setiap hari.
+            </p>
+
         </div>
 
         <div class="tips">
 
             <div class="tip">
+
                 <h3>😴 1. Tidur yang Cukup</h3>
+
                 <p>
                     Tidur yang cukup membantu tubuh dan otak beristirahat
                     setelah melakukan berbagai aktivitas.
                 </p>
+
             </div>
 
+
             <div class="tip">
+
                 <h3>🥗 2. Makan Bergizi</h3>
+
                 <p>
                     Konsumsi makanan bergizi dan seimbang untuk membantu
                     memenuhi kebutuhan nutrisi tubuh.
                 </p>
+
             </div>
 
+
             <div class="tip">
+
                 <h3>🏃 3. Aktif Bergerak</h3>
+
                 <p>
                     Melakukan aktivitas fisik secara rutin membantu
                     menjaga kebugaran tubuh dan mendukung kesehatan otak.
                 </p>
+
             </div>
 
+
             <div class="tip">
+
                 <h3>📖 4. Latih Otak</h3>
+
                 <p>
                     Membaca, belajar hal baru, bermain puzzle, atau
-                    mengasah keterampilan dapat menjadi aktivitas yang
-                    merangsang otak.
+                    mengasah keterampilan dapat merangsang otak.
                 </p>
+
             </div>
 
         </div>
+
+    </section>
+
+
+    <!-- GALERI -->
+    <section id="galeri">
+
+        <div class="judul">
+
+            <h2>📸 Galeri Kesehatan Otak</h2>
+
+            <p>
+                Beberapa aktivitas yang mendukung gaya hidup sehat.
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+            <!-- GAMBAR 1 -->
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=80"
+                    alt="Makanan sehat">
+
+                <div class="gallery-text">
+                    <h3>🥗 Makanan Bergizi</h3>
+                </div>
+
+            </div>
+
+
+            <!-- GAMBAR 2 -->
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80"
+                    alt="Olahraga">
+
+                <div class="gallery-text">
+                    <h3>🏃 Aktif Bergerak</h3>
+                </div>
+
+            </div>
+
+
+            <!-- GAMBAR 3 -->
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80"
+                    alt="Gaya hidup sehat">
+
+                <div class="gallery-text">
+                    <h3>🌿 Gaya Hidup Sehat</h3>
+                </div>
+
+            </div>
+
+
+            <!-- GAMBAR 4 -->
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80"
+                    alt="Belajar">
+
+                <div class="gallery-text">
+                    <h3>📚 Rajin Belajar</h3>
+                </div>
+
+            </div>
+
+
+            <!-- GAMBAR 5 -->
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511295742362-92c96b1cf484?auto=format&fit=crop&w=800&q=80"
+                    alt="Tidur cukup">
+
+                <div class="gallery-text">
+                    <h3>😴 Tidur Cukup</h3>
+                </div>
+
+            </div>
+
+
+            <!-- GAMBAR 6 -->
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=800&q=80"
+                    alt="Kesehatan">
+
+                <div class="gallery-text">
+                    <h3>❤️ Menjaga Kesehatan</h3>
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
 
@@ -580,9 +790,15 @@
     <section>
 
         <div class="judul">
+
             <h2>✅ Kebiasaan Baik untuk Otak</h2>
-            <p>Mulai dari kebiasaan kecil setiap hari.</p>
+
+            <p>
+                Mulai dari kebiasaan kecil setiap hari.
+            </p>
+
         </div>
+
 
         <div class="habit">
 
@@ -612,6 +828,7 @@
             </div>
 
         </div>
+
     </section>
 
 
