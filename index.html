@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Artikel Kesehatan</title>
+    <title>Sehat Itu Penting</title>
 
     <style>
         * {
@@ -15,31 +15,36 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f8f5;
-            color: #333;
+            background: #eefaf5;
+            color: #26352f;
             line-height: 1.7;
         }
 
+        /* HEADER */
         header {
-            background-color: #20a878;
+            background: linear-gradient(135deg, #0e9f6e, #38c995);
             color: white;
             text-align: center;
-            padding: 35px 20px;
+            padding: 55px 20px;
         }
 
         header h1 {
-            font-size: 32px;
-            margin-bottom: 5px;
+            font-size: 40px;
+            margin-bottom: 8px;
         }
 
         header p {
-            font-size: 16px;
+            font-size: 18px;
         }
 
+        /* NAVBAR */
         nav {
-            background-color: #167a59;
-            text-align: center;
+            background: #087f5b;
             padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         nav a {
@@ -53,48 +58,78 @@
             color: #b9ffe3;
         }
 
-        main {
+        /* CONTAINER */
+        .container {
             width: 90%;
-            max-width: 900px;
-            margin: 30px auto;
+            max-width: 950px;
+            margin: 35px auto;
         }
 
-        .hero,
-        .artikel,
-        .tips {
-            background-color: white;
-            padding: 25px;
-            margin-bottom: 25px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
+        /* HERO */
         .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
             text-align: center;
         }
 
-        h2 {
-            color: #167a59;
-            margin-bottom: 15px;
+        .hero h2 {
+            color: #087f5b;
+            font-size: 28px;
+            margin-bottom: 10px;
         }
 
-        h3 {
-            color: #20a878;
-            margin-top: 20px;
-            margin-bottom: 5px;
+        /* GAMBAR */
+        .gambar {
+            background: #dff8ec;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 25px 0;
         }
 
-        .artikel img {
-            display: block;
+        .gambar svg {
             width: 100%;
-            max-height: 350px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin: 20px 0;
+            max-height: 300px;
+        }
+
+        /* ARTIKEL */
+        .artikel {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        }
+
+        .artikel h2 {
+            color: #087f5b;
+            margin-bottom: 20px;
+        }
+
+        .artikel h3 {
+            color: #0e9f6e;
+            margin-top: 25px;
+            margin-bottom: 7px;
         }
 
         .artikel p {
             text-align: justify;
+        }
+
+        /* TIPS */
+        .tips {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        }
+
+        .tips h2 {
+            color: #087f5b;
+            margin-bottom: 15px;
         }
 
         .tips ul {
@@ -102,109 +137,201 @@
         }
 
         .tips li {
-            margin: 8px 0;
+            margin: 10px 0;
         }
 
+        /* FOOTER */
         footer {
-            background-color: #167a59;
+            background: #087f5b;
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 30px;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            nav a {
+                margin: 0 6px;
+                font-size: 14px;
+            }
+
+            .hero,
+            .artikel,
+            .tips {
+                padding: 22px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- HEADER -->
     <header>
-        <h1>ARTIKEL KESEHATAN</h1>
-        <p>Menjaga Kesehatan untuk Hidup yang Lebih Baik</p>
+        <h1>SEHAT ITU PENTING</h1>
+        <p>Informasi dan Tips Menjaga Kesehatan</p>
     </header>
 
+    <!-- NAVBAR -->
     <nav>
         <a href="#beranda">Beranda</a>
         <a href="#artikel">Artikel</a>
-        <a href="#tips">Tips Kesehatan</a>
-        <a href="#kontak">Kontak</a>
+        <a href="#tips">Tips</a>
     </nav>
 
-    <main>
+    <div class="container">
 
-        <section id="beranda" class="hero">
-            <h2>Pentingnya Menjaga Kesehatan</h2>
+        <!-- BERANDA -->
+        <section class="hero" id="beranda">
+            <h2>Jaga Kesehatan, Jaga Masa Depan</h2>
 
             <p>
-                Kesehatan merupakan salah satu hal penting dalam kehidupan.
-                Dengan menjaga kesehatan, kita dapat melakukan berbagai
-                aktivitas dengan baik dan menjalani kehidupan dengan lebih nyaman.
+                Kesehatan merupakan bagian penting dalam kehidupan.
+                Dengan menjaga kesehatan tubuh, kita dapat belajar,
+                bekerja, dan melakukan aktivitas sehari-hari dengan lebih baik.
             </p>
+
+            <!-- GAMBAR ILUSTRASI -->
+            <div class="gambar">
+
+                <svg viewBox="0 0 800 350"
+                     xmlns="http://www.w3.org/2000/svg">
+
+                    <!-- Background -->
+                    <rect width="800" height="350"
+                          rx="20" fill="#dff8ec"/>
+
+                    <!-- Lingkaran -->
+                    <circle cx="400" cy="175"
+                            r="105" fill="#ffffff"/>
+
+                    <!-- Palang kesehatan -->
+                    <rect x="370" y="115"
+                          width="60" height="120"
+                          rx="10" fill="#0e9f6e"/>
+
+                    <rect x="340" y="145"
+                          width="120" height="60"
+                          rx="10" fill="#0e9f6e"/>
+
+                    <!-- Daun kiri -->
+                    <path d="M190 220
+                             C120 190 125 110 210 95
+                             C235 150 220 195 190 220Z"
+                          fill="#38c995"/>
+
+                    <!-- Batang kiri -->
+                    <path d="M190 220
+                             C190 170 185 135 170 105"
+                          stroke="#087f5b"
+                          stroke-width="8"
+                          fill="none"/>
+
+                    <!-- Daun kanan -->
+                    <path d="M610 220
+                             C680 190 675 110 590 95
+                             C565 150 580 195 610 220Z"
+                          fill="#38c995"/>
+
+                    <!-- Batang kanan -->
+                    <path d="M610 220
+                             C610 170 615 135 630 105"
+                          stroke="#087f5b"
+                          stroke-width="8"
+                          fill="none"/>
+
+                    <!-- Teks -->
+                    <text x="400" y="310"
+                          text-anchor="middle"
+                          font-size="28"
+                          font-family="Arial"
+                          font-weight="bold"
+                          fill="#087f5b">
+                        HIDUP SEHAT
+                    </text>
+
+                </svg>
+
+            </div>
         </section>
 
-        <section id="artikel" class="artikel">
 
-            <h2>Artikel: Pola Hidup Sehat</h2>
+        <!-- ARTIKEL -->
+        <section class="artikel" id="artikel">
 
-            <img src="kesehatan.jpg" alt="Gambar kesehatan">
+            <h2>Artikel: Pentingnya Pola Hidup Sehat</h2>
 
             <p>
-                Pola hidup sehat adalah kebiasaan yang dilakukan untuk menjaga
-                tubuh agar tetap sehat dan bugar. Pola hidup sehat dapat dimulai
-                dari hal-hal sederhana dalam kehidupan sehari-hari.
+                Pola hidup sehat adalah kebiasaan yang dilakukan untuk
+                menjaga tubuh agar tetap sehat dan bugar. Menjaga kesehatan
+                tidak harus dilakukan dengan cara yang sulit. Kita dapat
+                memulainya dari kebiasaan sederhana setiap hari.
             </p>
 
             <h3>1. Mengonsumsi Makanan Bergizi</h3>
 
             <p>
-                Makanan bergizi sangat penting bagi tubuh. Kita sebaiknya
-                mengonsumsi sayur, buah, protein, dan makanan dengan gizi
-                yang seimbang.
+                Makanan bergizi memberikan energi dan nutrisi yang dibutuhkan
+                oleh tubuh. Biasakan mengonsumsi makanan yang beragam seperti
+                sayuran, buah-buahan, protein, dan makanan bergizi lainnya.
             </p>
 
             <h3>2. Rajin Berolahraga</h3>
 
             <p>
-                Olahraga membantu menjaga kebugaran tubuh. Kita dapat melakukan
-                olahraga sederhana seperti berjalan kaki, bersepeda, atau
-                melakukan peregangan.
+                Olahraga dapat membantu menjaga kebugaran tubuh. Aktivitas
+                sederhana seperti berjalan kaki, bersepeda, atau melakukan
+                peregangan dapat menjadi pilihan untuk menjaga tubuh tetap aktif.
             </p>
 
             <h3>3. Istirahat yang Cukup</h3>
 
             <p>
-                Istirahat yang cukup membantu tubuh memulihkan energi setelah
-                melakukan berbagai aktivitas. Tidur yang teratur juga dapat
-                membantu menjaga kondisi tubuh.
+                Tubuh membutuhkan waktu untuk beristirahat setelah melakukan
+                berbagai aktivitas. Istirahat yang cukup membantu tubuh
+                memulihkan energi sehingga kita dapat melakukan kegiatan
+                berikutnya dengan lebih baik.
             </p>
 
             <h3>4. Menjaga Kebersihan</h3>
 
             <p>
-                Menjaga kebersihan tubuh dan lingkungan dapat membantu
-                mengurangi risiko terkena penyakit. Biasakan mencuci tangan
-                dan menjaga lingkungan tetap bersih.
+                Kebersihan tubuh dan lingkungan perlu dijaga setiap hari.
+                Mencuci tangan, mandi secara teratur, dan menjaga lingkungan
+                tetap bersih merupakan kebiasaan yang baik.
             </p>
 
         </section>
 
-        <section id="tips" class="tips">
 
-            <h2>Tips Menjaga Kesehatan</h2>
+        <!-- TIPS -->
+        <section class="tips" id="tips">
+
+            <h2>Tips Sederhana Menjaga Kesehatan</h2>
 
             <ul>
                 <li>Minum air putih yang cukup.</li>
-                <li>Mengonsumsi makanan bergizi.</li>
+                <li>Makan makanan bergizi dan seimbang.</li>
                 <li>Rajin melakukan aktivitas fisik.</li>
                 <li>Menjaga kebersihan tubuh dan lingkungan.</li>
                 <li>Beristirahat dengan cukup.</li>
+                <li>Mengurangi kebiasaan yang tidak sehat.</li>
             </ul>
 
         </section>
 
-    </main>
+    </div>
 
-    <footer id="kontak">
-        <p>© 2026 Artikel Kesehatan | Tugas Sekolah</p>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Website Artikel Kesehatan</p>
+        <p>Dibuat untuk tugas sekolah</p>
     </footer>
 
 </body>
