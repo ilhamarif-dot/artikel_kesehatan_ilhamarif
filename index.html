@@ -1,531 +1,554 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NeuroCare - Kesehatan Otak</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial, sans-serif;
-    background:#080b18;
-    color:white;
-}
-
-/* NAVBAR */
-nav{
-    position:fixed;
-    top:18px;
-    left:5%;
-    width:90%;
-    z-index:1000;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:15px 25px;
-
-    background:rgba(20,25,50,.75);
-    backdrop-filter:blur(15px);
-
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:50px;
-}
-
-.logo{
-    font-size:22px;
-    font-weight:bold;
-}
-
-.logo span{
-    color:#5ee7ff;
-}
-
-nav ul{
-    display:flex;
-    gap:25px;
-    list-style:none;
-}
-
-nav a{
-    color:#ddd;
-    text-decoration:none;
-    font-size:14px;
-}
-
-nav a:hover{
-    color:#5ee7ff;
-}
-
-/* HERO */
-.hero{
-    min-height:100vh;
-    padding:150px 8% 80px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:60px;
-
-    background:
-    radial-gradient(circle at 80% 40%,#263b83,transparent 35%),
-    #080b18;
-}
-
-.hero-text{
-    max-width:600px;
-}
-
-.label{
-    color:#5ee7ff;
-    font-size:13px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
-
-.hero h1{
-    font-size:65px;
-    line-height:1;
-    margin:20px 0;
-}
-
-.hero h1 span{
-    color:#5ee7ff;
-}
-
-.hero p{
-    color:#9ba3bd;
-    font-size:17px;
-    margin-bottom:30px;
-}
-
-.btn{
-    display:inline-block;
-    padding:14px 25px;
-
-    color:#07101c;
-    background:#5ee7ff;
-
-    text-decoration:none;
-    border-radius:30px;
-
-    font-weight:bold;
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 30px rgba(94,231,255,.3);
-}
-
-/* GAMBAR */
-.image-box{
-    width:430px;
-    height:430px;
-
-    padding:12px;
-
-    border-radius:30px;
-
-    background:
-    linear-gradient(135deg,#5ee7ff,#796cff);
-
-    transform:rotate(3deg);
-
-    box-shadow:
-    0 0 60px rgba(94,231,255,.2);
-
-    transition:.4s;
-}
-
-.image-box:hover{
-    transform:rotate(0) scale(1.03);
-}
-
-.image-box img{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    border-radius:22px;
-
-    display:block;
-}
-
-/* SECTION */
-section{
-    padding:90px 8%;
-}
-
-.title{
-    text-align:center;
-    margin-bottom:50px;
-}
-
-.title small{
-    color:#5ee7ff;
-    letter-spacing:2px;
-}
-
-.title h2{
-    font-size:38px;
-    margin:10px 0;
-}
-
-.title p{
-    color:#8f97ae;
-}
-
-/* CARDS */
-.cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.card{
-    padding:30px;
-
-    background:rgba(255,255,255,.05);
-
-    border:1px solid rgba(255,255,255,.1);
-
-    border-radius:22px;
-
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    border-color:#5ee7ff;
-}
-
-.icon{
-    font-size:40px;
-    margin-bottom:15px;
-}
-
-.card h3{
-    margin-bottom:10px;
-}
-
-.card p{
-    color:#9299ae;
-    font-size:14px;
-}
-
-/* TIPS */
-.tips{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-
-.tip{
-    padding:25px;
-
-    background:rgba(255,255,255,.05);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:18px;
-}
-
-.tip h3{
-    color:#5ee7ff;
-    margin-bottom:8px;
-}
-
-.tip p{
-    color:#9299ae;
-}
-
-/* FOOTER */
-footer{
-    padding:35px;
-    text-align:center;
-
-    background:#050711;
-
-    border-top:1px solid rgba(255,255,255,.1);
-}
-
-footer h3{
-    color:#5ee7ff;
-}
-
-footer p{
-    color:#6f7588;
-    font-size:13px;
-    margin-top:5px;
-}
-
-/* RESPONSIVE */
-@media(max-width:850px){
-
-    .hero{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .hero h1{
-        font-size:48px;
-    }
-
-    .image-box{
-        width:330px;
-        height:330px;
-    }
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-    .tips{
-        grid-template-columns:1fr;
-    }
-}
-
-@media(max-width:500px){
-
-    nav ul{
-        gap:10px;
-    }
-
-    nav a{
-        font-size:11px;
-    }
-
-    .logo{
-        font-size:17px;
-    }
-
-    .hero h1{
-        font-size:40px;
-    }
-
-    .image-box{
-        width:280px;
-        height:280px;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NeuroCare - Kesehatan Otak</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8ff;
+            color: #172554;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 15px 25px;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(15px);
+            border-radius: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 15px;
+            z-index: 100;
+            box-shadow: 0 10px 30px rgba(37,99,235,0.10);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1687d9;
+        }
+
+        .logo span {
+            color: #818cf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #334155;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #1687d9;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 70px 8%;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 10% 20%, #dff7ff 0, transparent 30%),
+                radial-gradient(circle at 90% 80%, #eee8ff 0, transparent 30%);
+        }
+
+        .hero-text {
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 30px;
+            background: #e0f2fe;
+            color: #0284c7;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #1687d9;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 30px;
+            max-width: 550px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, #1687d9, #818cf8);
+            font-weight: bold;
+            box-shadow: 0 10px 25px rgba(37,99,235,0.25);
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(37,99,235,0.3);
+        }
+
+        /* HERO IMAGE */
+        .hero-image {
+            width: 450px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            border-radius: 35px;
+            box-shadow: 0 25px 60px rgba(30,64,175,0.18);
+            border: 8px solid rgba(255,255,255,0.8);
+        }
+
+        .floating-card {
+            position: absolute;
+            bottom: 25px;
+            left: -30px;
+            background: white;
+            padding: 18px 22px;
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(15,23,42,0.15);
+            font-weight: bold;
+        }
+
+        .floating-card span {
+            display: block;
+            color: #1687d9;
+            font-size: 14px;
+        }
+
+        /* SECTION */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #64748b;
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 35px rgba(37,99,235,0.08);
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(37,99,235,0.15);
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #e0f2fe, #ede9fe);
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #64748b;
+        }
+
+        /* TIPS */
+        .tips {
+            background: linear-gradient(135deg, #eaf6ff, #f2efff);
+        }
+
+        .tip-list {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .tip {
+            background: rgba(255,255,255,0.85);
+            padding: 25px;
+            border-radius: 20px;
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            box-shadow: 0 10px 30px rgba(37,99,235,0.07);
+        }
+
+        .number {
+            min-width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1687d9, #818cf8);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .tip h3 {
+            margin-bottom: 5px;
+        }
+
+        .tip p {
+            color: #64748b;
+        }
+
+        /* QUOTE */
+        .quote {
+            max-width: 900px;
+            margin: auto;
+            padding: 50px;
+            text-align: center;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #1687d9, #818cf8);
+            color: white;
+            box-shadow: 0 20px 50px rgba(37,99,235,0.2);
+        }
+
+        .quote h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .quote p {
+            font-size: 17px;
+            opacity: 0.95;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #eaf3ff;
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+        }
+
+        footer strong {
+            color: #1687d9;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 60px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-image {
+                width: 90%;
+                max-width: 450px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .tip-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-image img {
+                height: 330px;
+            }
+
+            .floating-card {
+                left: 5px;
+                bottom: 15px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">Neuro<span>Care</span></div>
 
-    <div class="logo">
-        Neuro<span>Care</span>
-    </div>
-
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#fungsi">Fungsi</a></li>
-        <li><a href="#tips">Tips</a></li>
-    </ul>
-
-</nav>
+        <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#fungsi">Fungsi</a></li>
+            <li><a href="#tips">Tips</a></li>
+        </ul>
+    </nav>
 
 
-<!-- HERO -->
-<section class="hero" id="home">
+    <!-- HERO -->
+    <section class="hero" id="beranda">
 
-    <div class="hero-text">
+        <div class="hero-text">
 
-        <div class="label">
-            ARTIKEL KESEHATAN
+            <div class="badge">
+                🧠 HEALTHY BRAIN • HEALTHY LIFE
+            </div>
+
+            <h1>
+                Jaga <span>Otak</span>,<br>
+                Jaga Masa Depan.
+            </h1>
+
+            <p>
+                Otak merupakan salah satu organ terpenting dalam tubuh.
+                Menjaga kesehatan otak dapat membantu kita berpikir,
+                belajar, mengingat, dan menjalani aktivitas sehari-hari
+                dengan lebih baik.
+            </p>
+
+            <a href="#fungsi" class="btn">
+                Pelajari Sekarang →
+            </a>
+
         </div>
 
-        <h1>
-            Jaga Otak,<br>
-            <span>Jaga Masa Depan.</span>
-        </h1>
 
+        <div class="hero-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=900&q=80"
+                alt="Gambar otak manusia">
+
+            <div class="floating-card">
+                🧠 Kesehatan Otak
+                <span>Investasi untuk masa depan</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FUNGSI -->
+    <section id="fungsi">
+
+        <div class="section-title">
+            <h2>Fungsi Penting Otak</h2>
+            <p>Otak memiliki berbagai fungsi penting bagi kehidupan manusia.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">🧠</div>
+                <h3>Berpikir</h3>
+                <p>
+                    Otak membantu manusia berpikir, memecahkan masalah,
+                    mengambil keputusan, dan memahami berbagai informasi.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">💡</div>
+                <h3>Belajar & Mengingat</h3>
+                <p>
+                    Otak berperan dalam menyimpan informasi dan membantu
+                    kita mempelajari berbagai hal baru.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">⚡</div>
+                <h3>Mengatur Tubuh</h3>
+                <p>
+                    Otak mengatur berbagai aktivitas tubuh seperti gerakan,
+                    keseimbangan, pernapasan, dan respons terhadap lingkungan.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TIPS -->
+    <section class="tips" id="tips">
+
+        <div class="section-title">
+            <h2>Cara Menjaga Kesehatan Otak</h2>
+            <p>Kebiasaan sederhana dapat membantu menjaga kesehatan otak.</p>
+        </div>
+
+        <div class="tip-list">
+
+            <div class="tip">
+                <div class="number">01</div>
+                <div>
+                    <h3>Tidur yang Cukup</h3>
+                    <p>
+                        Tidur yang cukup membantu tubuh dan otak beristirahat
+                        serta memulihkan energi.
+                    </p>
+                </div>
+            </div>
+
+            <div class="tip">
+                <div class="number">02</div>
+                <div>
+                    <h3>Makan Bergizi</h3>
+                    <p>
+                        Konsumsi makanan bergizi dan seimbang untuk mendukung
+                        fungsi otak dan kesehatan tubuh.
+                    </p>
+                </div>
+            </div>
+
+            <div class="tip">
+                <div class="number">03</div>
+                <div>
+                    <h3>Rajin Berolahraga</h3>
+                    <p>
+                        Aktivitas fisik secara rutin dapat membantu menjaga
+                        kebugaran tubuh dan mendukung kesehatan otak.
+                    </p>
+                </div>
+            </div>
+
+            <div class="tip">
+                <div class="number">04</div>
+                <div>
+                    <h3>Terus Belajar</h3>
+                    <p>
+                        Membaca, belajar, dan mencoba hal baru dapat membantu
+                        melatih kemampuan berpikir.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUOTE -->
+    <section>
+
+        <div class="quote">
+
+            <h2>Rawat Otakmu Mulai Hari Ini 🧠</h2>
+
+            <p>
+                Kesehatan otak merupakan bagian penting dari kesehatan tubuh.
+                Dengan kebiasaan hidup yang baik, kita dapat mendukung fungsi
+                otak dan menjalani kehidupan dengan lebih sehat.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
         <p>
-            Otak merupakan salah satu organ terpenting dalam tubuh.
-            Otak membantu manusia berpikir, belajar, mengingat,
-            mengatur emosi, dan melakukan berbagai aktivitas.
+            © 2026 <strong>NeuroCare</strong> • Website Edukasi Kesehatan Otak
         </p>
-
-        <a href="#fungsi" class="btn">
-            Pelajari Sekarang →
-        </a>
-
-    </div>
-
-
-    <!-- GAMBAR OTAK -->
-    <div class="image-box">
-
-        <img
-        src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80"
-        alt="Gambar otak manusia">
-
-    </div>
-
-</section>
-
-
-<!-- FUNGSI -->
-<section id="fungsi">
-
-    <div class="title">
-
-        <small>KENALI OTAK</small>
-
-        <h2>Fungsi Penting Otak</h2>
-
-        <p>
-            Beberapa fungsi utama otak dalam kehidupan sehari-hari.
-        </p>
-
-    </div>
-
-
-    <div class="cards">
-
-        <div class="card">
-
-            <div class="icon">🧠</div>
-
-            <h3>Berpikir</h3>
-
-            <p>
-                Otak membantu manusia berpikir, memecahkan masalah,
-                dan mengambil keputusan.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">📚</div>
-
-            <h3>Belajar</h3>
-
-            <p>
-                Otak berperan dalam menerima, memahami,
-                dan menyimpan informasi.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">❤️</div>
-
-            <h3>Mengatur Emosi</h3>
-
-            <p>
-                Otak membantu mengatur perasaan dan respons
-                terhadap berbagai keadaan.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- TIPS -->
-<section id="tips">
-
-    <div class="title">
-
-        <small>HEALTHY LIFE</small>
-
-        <h2>Cara Menjaga Kesehatan Otak</h2>
-
-        <p>
-            Mulai dari kebiasaan sederhana setiap hari.
-        </p>
-
-    </div>
-
-
-    <div class="tips">
-
-        <div class="tip">
-
-            <h3>😴 Tidur yang cukup</h3>
-
-            <p>
-                Berikan tubuh dan pikiran waktu istirahat yang cukup.
-            </p>
-
-        </div>
-
-
-        <div class="tip">
-
-            <h3>🥗 Makan makanan bergizi</h3>
-
-            <p>
-                Konsumsi makanan yang beragam dan bergizi
-                sebagai bagian dari pola hidup sehat.
-            </p>
-
-        </div>
-
-
-        <div class="tip">
-
-            <h3>🏃 Rajin bergerak</h3>
-
-            <p>
-                Lakukan aktivitas fisik secara rutin untuk
-                membantu menjaga kebugaran tubuh.
-            </p>
-
-        </div>
-
-
-        <div class="tip">
-
-            <h3>📖 Terus belajar</h3>
-
-            <p>
-                Membaca dan mempelajari hal baru dapat menjadi
-                aktivitas yang baik untuk otak.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-
-    <h3>NeuroCare</h3>
-
-    <p>
-        Website Artikel Kesehatan Otak • Tugas RPL
-    </p>
-
-    <p>
-        © 2026 NeuroCare
-    </p>
-
-</footer>
+    </footer>
 
 </body>
 </html>
