@@ -4,363 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NeuroCare - Kesehatan Otak</title>
+    <title>Kesehatan Otak</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, sans-serif;
-            background: #f4f8ff;
-            color: #172554;
-            line-height: 1.6;
+            background: #f4f0ff;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #6c3fc7, #a875e8);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 40px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 17px;
         }
 
         /* NAVBAR */
         nav {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 15px 25px;
-            background: rgba(255,255,255,0.85);
-            backdrop-filter: blur(15px);
-            border-radius: 18px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 15px;
-            z-index: 100;
-            box-shadow: 0 10px 30px rgba(37,99,235,0.10);
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #1687d9;
-        }
-
-        .logo span {
-            color: #818cf8;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #334155;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #1687d9;
-        }
-
-        /* HERO */
-        .hero {
-            min-height: 650px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
-            padding: 70px 8%;
-            position: relative;
-            overflow: hidden;
-            background:
-                radial-gradient(circle at 10% 20%, #dff7ff 0, transparent 30%),
-                radial-gradient(circle at 90% 80%, #eee8ff 0, transparent 30%);
-        }
-
-        .hero-text {
-            max-width: 600px;
-            z-index: 2;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 8px 16px;
-            border-radius: 30px;
-            background: #e0f2fe;
-            color: #0284c7;
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: 60px;
-            line-height: 1.1;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 span {
-            color: #1687d9;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: #64748b;
-            margin-bottom: 30px;
-            max-width: 550px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 25px;
-            border-radius: 12px;
-            text-decoration: none;
-            color: white;
-            background: linear-gradient(135deg, #1687d9, #818cf8);
-            font-weight: bold;
-            box-shadow: 0 10px 25px rgba(37,99,235,0.25);
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 30px rgba(37,99,235,0.3);
-        }
-
-        /* HERO IMAGE */
-        .hero-image {
-            width: 450px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 430px;
-            object-fit: cover;
-            border-radius: 35px;
-            box-shadow: 0 25px 60px rgba(30,64,175,0.18);
-            border: 8px solid rgba(255,255,255,0.8);
-        }
-
-        .floating-card {
-            position: absolute;
-            bottom: 25px;
-            left: -30px;
-            background: white;
-            padding: 18px 22px;
-            border-radius: 18px;
-            box-shadow: 0 15px 40px rgba(15,23,42,0.15);
-            font-weight: bold;
-        }
-
-        .floating-card span {
-            display: block;
-            color: #1687d9;
-            font-size: 14px;
-        }
-
-        /* SECTION */
-        section {
-            padding: 80px 8%;
-        }
-
-        .section-title {
+            background: #4b258e;
+            padding: 15px;
             text-align: center;
-            margin-bottom: 50px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
-        .section-title h2 {
-            font-size: 38px;
-            margin-bottom: 10px;
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
         }
 
-        .section-title p {
-            color: #64748b;
+        nav a:hover {
+            color: #e4d5ff;
         }
 
-        /* CARDS */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1200px;
-            margin: auto;
+        /* CONTAINER */
+        .container {
+            width: 90%;
+            max-width: 950px;
+            margin: 35px auto;
         }
 
+        /* CARD */
         .card {
             background: white;
             padding: 30px;
-            border-radius: 25px;
-            box-shadow: 0 10px 35px rgba(37,99,235,0.08);
-            border: 1px solid #e2e8f0;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 45px rgba(37,99,235,0.15);
-        }
-
-        .icon {
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 18px;
-            background: linear-gradient(135deg, #e0f2fe, #ede9fe);
-            font-size: 30px;
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-            font-size: 21px;
-        }
-
-        .card p {
-            color: #64748b;
-        }
-
-        /* TIPS */
-        .tips {
-            background: linear-gradient(135deg, #eaf6ff, #f2efff);
-        }
-
-        .tip-list {
-            max-width: 1000px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .tip {
-            background: rgba(255,255,255,0.85);
-            padding: 25px;
+            margin-bottom: 30px;
             border-radius: 20px;
-            display: flex;
-            gap: 18px;
-            align-items: flex-start;
-            box-shadow: 0 10px 30px rgba(37,99,235,0.07);
+            box-shadow: 0 5px 18px rgba(0,0,0,0.10);
         }
 
-        .number {
-            min-width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #1687d9, #818cf8);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-
-        .tip h3 {
-            margin-bottom: 5px;
-        }
-
-        .tip p {
-            color: #64748b;
-        }
-
-        /* QUOTE */
-        .quote {
-            max-width: 900px;
-            margin: auto;
-            padding: 50px;
-            text-align: center;
-            border-radius: 30px;
-            background: linear-gradient(135deg, #1687d9, #818cf8);
-            color: white;
-            box-shadow: 0 20px 50px rgba(37,99,235,0.2);
-        }
-
-        .quote h2 {
-            font-size: 32px;
+        .card h2 {
+            color: #5b2aa8;
             margin-bottom: 15px;
         }
 
-        .quote p {
-            font-size: 17px;
-            opacity: 0.95;
+        .card h3 {
+            color: #7544c2;
+            margin-top: 22px;
+            margin-bottom: 7px;
+        }
+
+        .card p {
+            text-align: justify;
+        }
+
+        /* GAMBAR OTAK */
+        .brain-image {
+            background: #eee5ff;
+            border-radius: 18px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .brain-image svg {
+            width: 100%;
+            max-width: 650px;
+            height: auto;
+        }
+
+        /* TIPS */
+        .tips ul {
+            padding-left: 25px;
+        }
+
+        .tips li {
+            margin: 10px 0;
         }
 
         /* FOOTER */
         footer {
-            background: #eaf3ff;
+            background: #4b258e;
+            color: white;
             text-align: center;
-            padding: 30px;
-            color: #64748b;
-        }
-
-        footer strong {
-            color: #1687d9;
+            padding: 25px;
+            margin-top: 40px;
         }
 
         /* RESPONSIVE */
-        @media (max-width: 900px) {
-
-            nav ul {
-                display: none;
-            }
-
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 60px;
-            }
-
-            .hero h1 {
-                font-size: 43px;
-            }
-
-            .hero p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-image {
-                width: 90%;
-                max-width: 450px;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            .tip-list {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero-image img {
-                height: 330px;
-            }
-
-            .floating-card {
-                left: 5px;
-                bottom: 15px;
-            }
-
-            section {
-                padding: 60px 5%;
-            }
-
-            .section-title h2 {
+        @media (max-width: 600px) {
+            header h1 {
                 font-size: 30px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .card {
+                padding: 22px;
             }
         }
     </style>
@@ -368,186 +142,182 @@
 
 <body>
 
+    <!-- HEADER -->
+    <header>
+        <h1>KESEHATAN OTAK</h1>
+        <p>Kenali dan Jaga Otak untuk Kehidupan yang Lebih Baik</p>
+    </header>
+
     <!-- NAVBAR -->
     <nav>
-        <div class="logo">Neuro<span>Care</span></div>
-
-        <ul>
-            <li><a href="#beranda">Beranda</a></li>
-            <li><a href="#fungsi">Fungsi</a></li>
-            <li><a href="#tips">Tips</a></li>
-        </ul>
+        <a href="#beranda">Beranda</a>
+        <a href="#artikel">Artikel</a>
+        <a href="#tips">Tips</a>
     </nav>
 
+    <div class="container">
 
-    <!-- HERO -->
-    <section class="hero" id="beranda">
+        <!-- BERANDA -->
+        <section class="card" id="beranda">
 
-        <div class="hero-text">
-
-            <div class="badge">
-                🧠 HEALTHY BRAIN • HEALTHY LIFE
-            </div>
-
-            <h1>
-                Jaga <span>Otak</span>,<br>
-                Jaga Masa Depan.
-            </h1>
+            <h2>Pentingnya Menjaga Kesehatan Otak</h2>
 
             <p>
-                Otak merupakan salah satu organ terpenting dalam tubuh.
-                Menjaga kesehatan otak dapat membantu kita berpikir,
-                belajar, mengingat, dan menjalani aktivitas sehari-hari
-                dengan lebih baik.
+                Otak merupakan salah satu organ yang sangat penting dalam tubuh.
+                Otak membantu mengatur berbagai fungsi tubuh, mengolah informasi,
+                mengingat sesuatu, serta membantu kita berpikir dan mengambil keputusan.
             </p>
 
-            <a href="#fungsi" class="btn">
-                Pelajari Sekarang →
-            </a>
+            <!-- GAMBAR ILUSTRASI OTAK -->
+            <div class="brain-image">
 
-        </div>
+                <svg viewBox="0 0 800 450"
+                     xmlns="http://www.w3.org/2000/svg">
 
+                    <!-- Background -->
+                    <rect width="800" height="450"
+                          rx="25" fill="#eee5ff"/>
 
-        <div class="hero-image">
+                    <!-- Otak kiri -->
+                    <path d="
+                        M400 115
+                        C350 70 275 80 245 130
+                        C190 130 165 175 185 220
+                        C145 260 170 320 220 330
+                        C230 380 290 390 330 360
+                        C360 385 390 370 400 345
+                        Z"
+                        fill="#c89bf2"/>
 
-            <img
-                src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=900&q=80"
-                alt="Gambar otak manusia">
+                    <!-- Otak kanan -->
+                    <path d="
+                        M400 115
+                        C450 70 525 80 555 130
+                        C610 130 635 175 615 220
+                        C655 260 630 320 580 330
+                        C570 380 510 390 470 360
+                        C440 385 410 370 400 345
+                        Z"
+                        fill="#b77ce8"/>
 
-            <div class="floating-card">
-                🧠 Kesehatan Otak
-                <span>Investasi untuk masa depan</span>
+                    <!-- Garis otak -->
+                    <path d="
+                        M300 125
+                        C270 160 300 180 270 210
+                        C240 240 285 255 265 290
+                        C250 315 285 335 310 320
+
+                        M350 105
+                        C325 140 360 160 335 190
+                        C310 220 350 240 325 275
+                        C305 305 345 325 360 310
+
+                        M500 125
+                        C530 160 500 180 530 210
+                        C560 240 515 255 535 290
+                        C550 315 515 335 490 320
+
+                        M450 105
+                        C475 140 440 160 465 190
+                        C490 220 450 240 475 275
+                        C495 305 455 325 440 310"
+                        fill="none"
+                        stroke="#8b52c7"
+                        stroke-width="10"
+                        stroke-linecap="round"/>
+
+                    <!-- Titik tengah -->
+                    <line x1="400" y1="115"
+                          x2="400" y2="345"
+                          stroke="#7544c2"
+                          stroke-width="5"/>
+
+                    <!-- Teks -->
+                    <text x="400" y="410"
+                          text-anchor="middle"
+                          font-size="30"
+                          font-family="Arial"
+                          font-weight="bold"
+                          fill="#4b258e">
+                        OTAK SEHAT
+                    </text>
+
+                </svg>
+
             </div>
-
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- FUNGSI -->
-    <section id="fungsi">
+        <!-- ARTIKEL -->
+        <section class="card" id="artikel">
 
-        <div class="section-title">
-            <h2>Fungsi Penting Otak</h2>
-            <p>Otak memiliki berbagai fungsi penting bagi kehidupan manusia.</p>
-        </div>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="icon">🧠</div>
-                <h3>Berpikir</h3>
-                <p>
-                    Otak membantu manusia berpikir, memecahkan masalah,
-                    mengambil keputusan, dan memahami berbagai informasi.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">💡</div>
-                <h3>Belajar & Mengingat</h3>
-                <p>
-                    Otak berperan dalam menyimpan informasi dan membantu
-                    kita mempelajari berbagai hal baru.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">⚡</div>
-                <h3>Mengatur Tubuh</h3>
-                <p>
-                    Otak mengatur berbagai aktivitas tubuh seperti gerakan,
-                    keseimbangan, pernapasan, dan respons terhadap lingkungan.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- TIPS -->
-    <section class="tips" id="tips">
-
-        <div class="section-title">
-            <h2>Cara Menjaga Kesehatan Otak</h2>
-            <p>Kebiasaan sederhana dapat membantu menjaga kesehatan otak.</p>
-        </div>
-
-        <div class="tip-list">
-
-            <div class="tip">
-                <div class="number">01</div>
-                <div>
-                    <h3>Tidur yang Cukup</h3>
-                    <p>
-                        Tidur yang cukup membantu tubuh dan otak beristirahat
-                        serta memulihkan energi.
-                    </p>
-                </div>
-            </div>
-
-            <div class="tip">
-                <div class="number">02</div>
-                <div>
-                    <h3>Makan Bergizi</h3>
-                    <p>
-                        Konsumsi makanan bergizi dan seimbang untuk mendukung
-                        fungsi otak dan kesehatan tubuh.
-                    </p>
-                </div>
-            </div>
-
-            <div class="tip">
-                <div class="number">03</div>
-                <div>
-                    <h3>Rajin Berolahraga</h3>
-                    <p>
-                        Aktivitas fisik secara rutin dapat membantu menjaga
-                        kebugaran tubuh dan mendukung kesehatan otak.
-                    </p>
-                </div>
-            </div>
-
-            <div class="tip">
-                <div class="number">04</div>
-                <div>
-                    <h3>Terus Belajar</h3>
-                    <p>
-                        Membaca, belajar, dan mencoba hal baru dapat membantu
-                        melatih kemampuan berpikir.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- QUOTE -->
-    <section>
-
-        <div class="quote">
-
-            <h2>Rawat Otakmu Mulai Hari Ini 🧠</h2>
+            <h2>Artikel: Cara Menjaga Kesehatan Otak</h2>
 
             <p>
-                Kesehatan otak merupakan bagian penting dari kesehatan tubuh.
-                Dengan kebiasaan hidup yang baik, kita dapat mendukung fungsi
-                otak dan menjalani kehidupan dengan lebih sehat.
+                Menjaga kesehatan otak penting dilakukan sejak dini. Otak yang
+                sehat membantu seseorang berpikir, belajar, mengingat, dan
+                melakukan berbagai aktivitas sehari-hari dengan baik.
             </p>
 
-        </div>
+            <h3>1. Tidur yang Cukup</h3>
 
-    </section>
+            <p>
+                Tidur memberikan kesempatan bagi tubuh dan otak untuk beristirahat.
+                Kebiasaan tidur yang teratur dapat membantu menjaga kemampuan
+                konsentrasi dan daya ingat.
+            </p>
+
+            <h3>2. Mengonsumsi Makanan Bergizi</h3>
+
+            <p>
+                Makanan bergizi membantu memenuhi kebutuhan nutrisi tubuh.
+                Konsumsilah makanan yang beragam seperti sayuran, buah-buahan,
+                protein, dan sumber makanan bergizi lainnya.
+            </p>
+
+            <h3>3. Rajin Berolahraga</h3>
+
+            <p>
+                Aktivitas fisik secara teratur dapat membantu menjaga kesehatan
+                tubuh secara keseluruhan. Berjalan kaki, bersepeda, dan olahraga
+                ringan dapat menjadi pilihan aktivitas sehari-hari.
+            </p>
+
+            <h3>4. Melatih Otak</h3>
+
+            <p>
+                Otak juga perlu digunakan dan dilatih. Membaca, belajar hal baru,
+                bermain permainan yang melatih logika, dan mengerjakan aktivitas
+                yang membutuhkan konsentrasi dapat membantu menjaga kemampuan
+                berpikir.
+            </p>
+
+        </section>
+
+
+        <!-- TIPS -->
+        <section class="card tips" id="tips">
+
+            <h2>Tips Sederhana Menjaga Otak</h2>
+
+            <ul>
+                <li>Tidur dan bangun secara teratur.</li>
+                <li>Mengonsumsi makanan bergizi.</li>
+                <li>Melakukan aktivitas fisik secara rutin.</li>
+                <li>Membaca dan mempelajari hal-hal baru.</li>
+                <li>Mengelola stres dengan kegiatan yang positif.</li>
+                <li>Memberikan waktu istirahat yang cukup.</li>
+            </ul>
+
+        </section>
+
+    </div>
 
 
     <!-- FOOTER -->
     <footer>
-        <p>
-            © 2026 <strong>NeuroCare</strong> • Website Edukasi Kesehatan Otak
-        </p>
+        <p>© 2026 Artikel Kesehatan Otak</p>
+        <p>Dibuat untuk tugas sekolah</p>
     </footer>
 
 </body>
